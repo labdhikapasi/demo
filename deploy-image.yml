@@ -1,0 +1,8 @@
+---
+- name: Pull docker image in Production host
+  hosts: all
+  tasks:
+    - name: pulling the image
+      docker_image:
+        name: labdhi/calculator-devops
+        source: pull
