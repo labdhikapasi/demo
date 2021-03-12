@@ -63,14 +63,14 @@ public class Calculator {
     }
 
 
-    private double squareRoot(double number1) {
+    public double squareRoot(double number1) {
         logger.info("[SQUARE ROOT] - " + number1);
         double result = Math.sqrt(number1);
         logger.info("[RESULT - SQUARE ROOT] - " + result);
         return result;
     }
 
-    private int factorial(double number1) {
+    public int factorial(double number1) {
         logger.info("[FACTORIAL] - " + number1);
         int result = 1;
         if(number1 == 1)
@@ -83,14 +83,14 @@ public class Calculator {
     }
 
 
-    private double log(double number1) {
+    public double log(double number1) {
         logger.info("[LOG] - " + number1);
         double result = Math.log(number1);
         logger.info("[RESULT - LOG] - " + result);
         return result;
     }
 
-    private double power(double number1, double number2) {
+    public double power(double number1, double number2) {
         logger.info("[POWER] - " + number1 +","+number2);
         double result = Math.pow(number1,number2);
         logger.info("[RESULT - POWER] - " + result);
