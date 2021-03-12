@@ -1,8 +1,10 @@
 ---
-- name: Pull docker image in Production host
-  hosts: all
+- name: Pull the image in production host and create the container
+  hosts: Host
   tasks:
-    - name: pulling the image
-      docker_image:
-        name: labdhi/calculator-devops
-        source: pull
+    - name: Docker login
+      shell:
+        cmd: docker login
+    - name: Pulling the Image
+      shell:
+        cmd: docker pull labdhi/calculator-devops:latest
