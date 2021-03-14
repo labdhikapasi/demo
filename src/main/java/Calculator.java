@@ -12,9 +12,9 @@ public class Calculator {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
-        double number1, number2;
+        double num1, num2;
         do {
-            System.out.println("Calculator-DevOps, Choose to perform operation");
+            System.out.println("Below are Calculator Operations\nChoose among 1 to 4...\n\n");
             System.out.print("Press 1 to Square Root\nPress 2 to Factorial\nPress 3 to Log (base e)\nPress 4 to Power\n" +
                     "Press any other key to exit\nEnter your choice: ");
             int choice;
@@ -29,33 +29,33 @@ public class Calculator {
                 switch (choice) {
                     case 1:
 
-                        System.out.print("Enter the number : ");
-                        number1 = scanner.nextDouble();
-                        System.out.println("Square Root result is : " + calculator.squareRoot(number1));
+                        System.out.print("Enter the number for SquareRoot : ");
+                        num1 = scanner.nextDouble();
+                        System.out.println("Square Root result is : " + calculator.squareRoot(num1)+"\n\n");
                         break;
                     case 2:
-                        System.out.print("Enter the number : ");
-                        number1 = scanner.nextDouble();
-                        System.out.println("Factorial result is : " + calculator.factorial(number1));
+                        System.out.print("Enter the number for Factorial : ");
+                        num1 = scanner.nextDouble();
+                        System.out.println("Factorial result is : " + calculator.factorial(num1)+"\n\n");
                         break;
                     case 3:
-                        System.out.print("Enter the number : ");
-                        number1 = scanner.nextDouble();
-                        System.out.println("Log result is : " + calculator.log(number1));
+                        System.out.print("Enter the number for Log: ");
+                        num1 = scanner.nextDouble();
+                        System.out.println("Log result is : " + calculator.log(num1)+"\n\n");
                         break;
                     case 4:
-                        System.out.print("Enter the first number : ");
-                        number1 = scanner.nextDouble();
-                        System.out.print("Enter the second number : ");
-                        number2 = scanner.nextDouble();
-                        System.out.println("Power result is : " + calculator.power(number1, number2));
+                        System.out.print("Enter the first number for Power : ");
+                        num1 = scanner.nextDouble();
+                        System.out.print("Enter the second number for Power: ");
+                        num2 = scanner.nextDouble();
+                        System.out.println("Power result is : " + calculator.power(num1, num2)+"\n\n");
                         break;
                     default:
                         System.out.println("Exiting....");
                         return;
                 }
             } catch (InputMismatchException error) {
-                logger.error("Invalid input, Entered input is not a number");
+                logger.error("Invalid input, Entered input is invalid number");
                 return;
             }
         } while (true);
@@ -63,37 +63,37 @@ public class Calculator {
     }
 
 
-    public double squareRoot(double number1) {
-        logger.info("[SQUARE ROOT] - " + number1);
-        double result = Math.sqrt(number1);
-        logger.info("[RESULT - SQUARE ROOT] - " + result);
+    public double squareRoot(double num1) {
+        logger.info("[SQUARE ROOT] argument - " + num1);
+        double result = Math.sqrt(num1);
+        logger.info("[SQUARE ROOT] result - " + result);
         return result;
     }
 
-    public int factorial(double number1) {
-        logger.info("[FACTORIAL] - " + number1);
+    public int factorial(double num1) {
+        logger.info("[FACTORIAL] argument - " + num1);
         int result = 1;
-        if(number1 == 1)
+        if(num1 == 1)
             return 1;
-        for(int i=2; i<=number1; i++){
+        for(int i=2; i<=num1; i++){
             result*=i;
         }
-        logger.info("[RESULT - FACTORIAL] - " + result);
+        logger.info("[FACTORIAL] result - " + result);
         return result;
     }
 
 
-    public double log(double number1) {
-        logger.info("[LOG] - " + number1);
-        double result = Math.log(number1);
-        logger.info("[RESULT - LOG] - " + result);
+    public double log(double num1) {
+        logger.info("[LOG] argument - " + num1);
+        double result = Math.log(num1);
+        logger.info("[LOG] result - " + result);
         return result;
     }
 
-    public double power(double number1, double number2) {
-        logger.info("[POWER] - " + number1 +","+number2);
-        double result = Math.pow(number1,number2);
-        logger.info("[RESULT - POWER] - " + result);
+    public double power(double num1, double num2) {
+        logger.info("[POWER] argument - " + num1 +","+num2);
+        double result = Math.pow(num1,num2);
+        logger.info("[POWER] result - " + result);
         return result;
     }
 
